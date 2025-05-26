@@ -1,34 +1,36 @@
 @extends('frontend.layouts.app')
 
 @section('content')
+    <section id="subheader" class="relative bg-light">
+        <div class="container relative z-index-1000">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="crumb breadcrumb bg-transparent p-0">
+                        <li class="breadcrumb-item has-transition opacity-60 hov-opacity-100">
+                            <a class="text-reset" href="{{ route('home') }}">
+                                {{ translate('Home') }}
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active text-dark fw-600">
+                            {{ translate('Blog') }}
+                        </li>
+                    </ul>
+                    <h1 class="text-uppercase text-dark fw-700">
+                        {{ translate('Blog') }}
+                    </h1>
+                    <p class="col-lg-10 lead text-secondary">
+                        {{ translate('Transform Your Garden into a Personal Paradise!') }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="pb-4 pt-5">
         <div class="container">
             <div class="row gutters-16">
                 <!-- Contents -->
                 <div class="col-xl-9 order-xl-1">
-                    <!-- Breadcrumb -->
-                    <div class="row gutters-16 mb-4">
-                        <div class="col-5 col-xl-6">
-                            <h1 class="fw-700 fs-20 fs-md-24 text-dark mb-0">{{ translate('Blogs')}}</h1>
-                        </div>
-                        <div class="col-5 col-xl-6">
-                            <ul class="breadcrumb bg-transparent p-0 justify-content-end">
-                                <li class="breadcrumb-item has-transition opacity-60 hov-opacity-100">
-                                    <a class="text-reset" href="{{ route('home') }}">
-                                        {{ translate('Home')}}
-                                    </a>
-                                </li>
-                                <li class="text-dark fw-600 breadcrumb-item">
-                                    "{{ translate('Blog') }}"
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col d-xl-none mb-lg-3 text-right">
-                            <button type="button" class="btn btn-icon p-0 active" data-toggle="class-toggle" data-target=".aiz-filter-sidebar">
-                                <i class="la la-filter la-2x"></i>
-                            </button>
-                        </div>
-                    </div>
                     <!-- Blogs -->
                     <div class="blog card-columns">
                         @foreach($blogs as $blog)

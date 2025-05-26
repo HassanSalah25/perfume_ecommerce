@@ -173,6 +173,7 @@
 
                 .pac-container { z-index: 100000; }
             </style>
+
             <link href="{{ asset('front/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
             <link href="{{ asset('front/css/plugins.css') }}" rel="stylesheet" type="text/css" >
             <link href="{{ asset('front/css/swiper.css') }}" rel="stylesheet" type="text/css" >
@@ -222,7 +223,6 @@
         <body>
 
         <!-- aiz-main-wrapper -->
-        <div class="aiz-main-wrapper d-flex flex-column bg-white">
 
             <div id="wrapper">
                 @php
@@ -242,8 +242,6 @@
 
                 <!-- footer -->
                 @include('frontend.inc.footer')
-            </div>
-        </div>
 
         @if(get_setting('use_floating_buttons') == 1)
             <!-- Floating Buttons -->
@@ -584,6 +582,7 @@
         </script>
 
         <script>
+            console.log('dsdsd')
             @if (Route::currentRouteName() == 'home' || Route::currentRouteName() == '/')
 
             $.post('{{ route('home.section.featured') }}', {
@@ -610,6 +609,7 @@
             $.post('{{ route('home.section.newest_products') }}', {
                 _token: '{{ csrf_token() }}'
             }, function(data) {
+                console.log('tesstttttttttttttts')
                 $('#section_newest').html(data);
                 AIZ.plugins.slickCarousel();
             });

@@ -60,7 +60,6 @@
                             <div class="d-counter">
                                 @include('frontend.partials.cart.cart') {{-- This partial renders cart count or UI --}}
                             </div>
-                            <img src="{{ static_asset('front/images/ui/cart.svg') }}" alt="">
                         </div>
 
                         <!-- Mobile Menu Toggle -->
