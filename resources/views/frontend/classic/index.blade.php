@@ -24,9 +24,10 @@
                     @foreach ($sliders as $key => $slider)
                         <div class="swiper-slide">
                             <div class="swiper-inner jarallax">
-                                <img src="{{ $slider ? my_asset($slider->file_name) : static_asset('assets/img/placeholder.jpg') }}"
-                                     class="jarallax-img" alt="{{ env('APP_NAME') }} promo"
-                                     onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';">
+                                <img
+                                    src="{{ $slider ? my_asset($slider->file_name) : static_asset('assets/img/placeholder.jpg') }}"
+                                    class="jarallax-img" alt="{{ env('APP_NAME') }} promo"
+                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';">
 
                                 <div class="sw-caption z-1000">
                                     <div class="container">
@@ -37,12 +38,16 @@
                                             <div class="col-lg-5">
                                                 <div class="spacer-single"></div>
                                                 <div class="sw-text-wrapper">
-                                                    <div class="subtitle">{{ translate('Best Quality Plants') }}</div>
-                                                    <h2 class="slider-title text-uppercase mb-4">
-                                                        {{ translate('Discover Amazing') }} <span
-                                                                class="id-color-2">{{ translate('variety of plants') }}</span>
+                                                    <div class="subtitle"
+                                                         style="color: black !important">{{ translate('Best Quality Perfumes') }}</div>
+                                                    <h2 class="slider-title text-uppercase mb-4"
+                                                        style="color: black !important">
+                                                        {{ translate('Discover Our') }} <span class="id-color-2"
+                                                                                              style="color: black !important">{{ translate('Signature Scents Collection') }}</span>
                                                     </h2>
-                                                    <p class="slider-text">{{ translate('From vibrant flowering plants to lush tropical greens, we offer an incredible variety to turn your space into a living paradise.') }}</p>
+                                                    <p class="slider-text" style="color: black !important">
+                                                        {{ translate('From rich oriental blends to fresh floral notes, explore a curated range of perfumes crafted to elevate every moment.') }}
+                                                    </p>
 
                                                     <div class="d-flex mb-4 slider-extra xs-hide">
                                                         @foreach ([
@@ -50,10 +55,13 @@
                                                             ['icon' => 'shipped-truck-svgrepo-com.svg', 'label' => 'Free Delivery'],
                                                             ['icon' => 'recommended-like-svgrepo-com.svg', 'label' => 'Guarantee'],
                                                         ] as $badge)
-                                                            <div class="d-inline me-3 w-130px text-center overlay-white-6 p-3 rounded-1">
-                                                                <img src="{{ static_asset('front/images/shop/svg/' . $badge['icon']) }}"
-                                                                     class="w-40 mb-1" alt="">
-                                                                <h6 class="mb-0">{{ translate($badge['label']) }}</h6>
+                                                            <div
+                                                                class="d-inline me-3 w-130px text-center overlay-white-6 p-3 rounded-1">
+                                                                <img
+                                                                    src="{{ static_asset('front/images/shop/svg/' . $badge['icon']) }}"
+                                                                    class="w-40 mb-1" alt="">
+                                                                <h6 class="mb-0"
+                                                                    style="color: black">{{ translate($badge['label']) }}</h6>
                                                             </div>
                                                         @endforeach
                                                     </div>
@@ -64,22 +72,22 @@
                                             </div>
 
                                             <!-- Image Right -->
-                                            <div class="col-lg-6">
-                                                <div class="relative">
-                                                    <div class="abs abs-middle bg-blur overlay-white-70 w-250px p-4 rounded-1">
-                                                        <h5>{{ translate('Algonema Plant with Teracota Pot') }}</h5>
-                                                        <div class="de-rating-ext">
-                                                        <span class="d-stars">
-                                                            @for ($i = 0; $i < 5; $i++)
-                                                                <i class="fa-solid fa-star"></i>
-                                                            @endfor
-                                                        </span>
-                                                        </div>
-                                                    </div>
-                                                    <img src="{{ $slider ? my_asset($slider->file_name) : static_asset('assets/img/placeholder.jpg') }}"
-                                                         class="w-100" alt="">
-                                                </div>
-                                            </div>
+                                            {{--                                            <div class="col-lg-6">--}}
+                                            {{--                                                <div class="relative">--}}
+                                            {{--                                                    <div class="abs abs-middle bg-blur overlay-white-70 w-250px p-4 rounded-1">--}}
+                                            {{--                                                        <h5>{{ translate('Luxury Oud Perfume in Elegant Glass Bottle – 100ml') }}</h5>--}}
+                                            {{--                                                        <div class="de-rating-ext">--}}
+                                            {{--                                                        <span class="d-stars">--}}
+                                            {{--                                                            @for ($i = 0; $i < 5; $i++)--}}
+                                            {{--                                                                <i class="fa-solid fa-star"></i>--}}
+                                            {{--                                                            @endfor--}}
+                                            {{--                                                        </span>--}}
+                                            {{--                                                        </div>--}}
+                                            {{--                                                    </div>--}}
+                                            {{--                                                    <img src="{{ $slider ? my_asset($slider->file_name) : static_asset('assets/img/placeholder.jpg') }}"--}}
+                                            {{--                                                         class="w-100" alt="">--}}
+                                            {{--                                                </div>--}}
+                                            {{--                                            </div>--}}
 
                                             <div class="spacer-single"></div>
                                         </div>
@@ -105,18 +113,17 @@
                 <div class="col-lg-6" style="background-size: cover; background-repeat: no-repeat;">
                     <div class="subtitle wow fadeInUp mb-3 animated"
                          style="background-size: cover; background-repeat: no-repeat; visibility: visible; animation-name: fadeInUp;">
-                        Our Story
+                        {{ translate('Our Story') }}
                     </div>
                     <h2 class="text-uppercase wow fadeInUp animated" data-wow-delay=".2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">Crafting <span
-                                class="id-color-2">Beautiful Gardens</span> Since '99</h2>
+                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">{{ translate('Crafting') }}
+                        <span
+                            class="id-color-2">{{ translate('Timeless Fragrances') }}</span> {{ translate('Since 99') }}
+                    </h2>
                     <p class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                        Established in 1999, our garden service has been transforming outdoor spaces into thriving,
-                        beautiful landscapes for over two decades. With a commitment to quality and personalized
-                        care, our experienced team offers a full range of services, from design to maintenance,
-                        ensuring your garden flourishes in every season.</p>
-                    <a class="btn-main btn-line wow fadeInUp" href="projects.html" data-wow-delay=".6s"
-                       style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">Our Projects</a>
+                        {{ translate(' Since 1999, we’ve been dedicated to the art of perfumery — blending tradition, luxury, and innovation into every bottle. From the heart of the Middle East, our scents are handcrafted to awaken memories, express identity, and leave a lasting impression. Each fragrance is a story… and every story begins with a scent.') }}</p>
+                    <a class="btn-main btn-line wow fadeInUp" href="{{ route('categories.all') }}" data-wow-delay=".6s"
+                       style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">{{ translate('Explore Our Collection') }}</a>
                 </div>
 
                 <div class="col-lg-6" style="background-size: cover; background-repeat: no-repeat;">
@@ -136,9 +143,10 @@
                                         <img src="front/images/icons/tree.png" class="abs abs-middle w-60px" alt="">
                                         <div class="de_count ps-80 wow fadeInUp"
                                              style="background-size: cover; background-repeat: no-repeat; visibility: hidden; animation-name: none;">
-                                            <h2 class="mb-0 fs-32"><span class="timer" data-to="550"
-                                                                         data-speed="3000"></span>+</h2>
-                                            <span class="op-7">Garden Designed</span>
+                                            <h2 class="mb-0 fs-32">
+                                                <span class="timer" data-to="550" data-speed="3000"></span>+
+                                            </h2>
+                                            <span class="op-7">{{ translate('Bottles Sold') }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +163,7 @@
                                              style="background-size: cover; background-repeat: no-repeat; visibility: visible; animation-name: fadeInUp;">
                                             <h2 class="mb-0 fs-32"><span class="timer" data-to="850"
                                                                          data-speed="3000"></span>+</h2>
-                                            <span class="op-7">Happy Customers</span>
+                                            <span class="op-7">{{ translate('Happy Fragrance Lovers') }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -232,10 +240,11 @@
                         @php
                             $flash_deal_products = get_flash_deal_products($flash_deal->id);
                         @endphp
-                        <div class="aiz-carousel border-top @if (count($flash_deal_products) > 8) border-right @endif arrow-inactive-none arrow-x-0"
-                             data-rows="2" data-items="5" data-xxl-items="5" data-xl-items="3.5" data-lg-items="3"
-                             data-md-items="2"
-                             data-sm-items="2.5" data-xs-items="1.7" data-arrows="true" data-dots="false">
+                        <div
+                            class="aiz-carousel border-top @if (count($flash_deal_products) > 8) border-right @endif arrow-inactive-none arrow-x-0"
+                            data-rows="2" data-items="5" data-xxl-items="5" data-xl-items="3.5" data-lg-items="3"
+                            data-md-items="2"
+                            data-sm-items="2.5" data-xs-items="1.7" data-arrows="true" data-dots="false">
                             @foreach ($flash_deal_products as $key => $flash_deal_product)
                                 <div class="carousel-box border-left border-bottom">
                                     @if ($flash_deal_product->product != null && $flash_deal_product->product->published != 0)
@@ -246,7 +255,7 @@
                                             }
                                         @endphp
                                         <div
-                                                class="h-100px h-md-200px h-lg-auto flash-deal-item position-relative text-center has-transition hov-shadow-out z-1">
+                                            class="h-100px h-md-200px h-lg-auto flash-deal-item position-relative text-center has-transition hov-shadow-out z-1">
                                             <a href="{{ $product_url }}"
                                                class="d-block py-md-3 overflow-hidden hov-scale-img"
                                                title="{{ $flash_deal_product->product->getTranslation('name') }}">
@@ -257,12 +266,12 @@
                                                      onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
                                                 <!-- Price -->
                                                 <div
-                                                        class="fs-10 fs-md-14 mt-md-3 text-center h-md-48px has-transition overflow-hidden pt-md-4 flash-deal-price lh-1-5">
+                                                    class="fs-10 fs-md-14 mt-md-3 text-center h-md-48px has-transition overflow-hidden pt-md-4 flash-deal-price lh-1-5">
                                                     <span
-                                                            class="d-block text-primary fw-700">{{ home_discounted_base_price($flash_deal_product->product) }}</span>
+                                                        class="d-block text-primary fw-700">{{ home_discounted_base_price($flash_deal_product->product) }}</span>
                                                     @if (home_base_price($flash_deal_product->product) != home_discounted_base_price($flash_deal_product->product))
                                                         <del
-                                                                class="d-block fw-400 text-secondary">{{ home_base_price($flash_deal_product->product) }}</del>
+                                                            class="d-block fw-400 text-secondary">{{ home_base_price($flash_deal_product->product) }}</del>
                                                     @endif
                                                 </div>
                                             </a>
@@ -282,7 +291,7 @@
     @if (count($featured_categories) > 0)
         <section class="p-4" style="background-size: cover; background-repeat: no-repeat;">
             <div class="container-fluid">
-                <div class="row g-4">
+                <div class="row g-3">
                     @foreach ($featured_categories->take(4) as $index => $category)
                         @php
                             $category_name = $category->getTranslation('name');
@@ -293,7 +302,7 @@
                             $delay = $index * 0.3; // .0s, .3s, .6s, etc.
                         @endphp
 
-                        <div class="col-lg-3 col-sm-6 wow fadeInRight animated"
+                        <div class="col-lg-4 col-sm-6 wow fadeInRight animated"
                              data-wow-delay=".{{ $delay }}s"
                              style="visibility: visible; animation-delay: .{{ $delay }}s; animation-name: fadeInRight;">
                             <div class="bg-color text-light rounded-1 overflow-hidden">
@@ -362,6 +371,34 @@
 
     <!-- Featured Products -->
     <div id="section_featured">
+        @if (count(get_featured_products()) > 0)
+            <section class="bg-light">
+                <div class="container">
+                    <div class="row g-4 mb-4">
+                        <div class="col-lg-12">
+                            <div class="owl-custom-nav menu-" data-target="#today-deals-carousel">
+                                <div class="d-flex justify-content-between">
+                                    <h3 class="text-uppercase mb-4">{{ translate('Featured Products') }}</h3>
+                                    <div class="arrow-simple">
+                                        <a class="btn-prev"></a>
+                                        <a class="btn-next"></a>
+                                    </div>
+                                </div>
+
+                                <div id="today-deals-carousel" class="owl-carousel owl-4-cols">
+                                    @foreach (get_featured_products() as $key => $product)
+                                        <div class="item">
+                                            @include('frontend.'.get_setting('homepage_select').'.partials.product_box_2',['product' => $product])
+
+                                        </div>
+                                    @endforeach
+                                </div> <!-- end carousel -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
 
     </div>
 
@@ -408,7 +445,7 @@
                         <div class="subtitle wow fadeInUp mb-3">{{ translate('Our Story') }}</div>
                         <h2 class="text-uppercase wow fadeInUp" data-wow-delay=".2s">
                             {{ translate('Crafting Beautiful Gardens') }} <span
-                                    class="id-color-2">{{ translate("Since '99") }}</span>
+                                class="id-color-2">{{ translate("Since '99") }}</span>
                         </h2>
                         <p class="wow fadeInUp">
                             {{ translate("Established in 1999, our garden service has been transforming outdoor spaces into thriving, beautiful landscapes for over two decades. With a commitment to quality and personalized care, our experienced team offers a full range of services, from design to maintenance, ensuring your garden flourishes in every season.") }}
@@ -496,36 +533,37 @@
         <div class="container">
             <div class="row g-4">
                 @php
+
                     $promos = [
-                        [
-                            'image' => 'front/images/shop/misc/5.webp',
-                            'title' => 'Natural Plants',
-                            'bg' => '#DCE0D9',
-                            'btn' => 'Shop Now',
-                            'link' => route('products.all')
-                        ],
-                        [
-                            'image' => 'front/images/shop/misc/6.webp',
-                            'title' => 'Shop Gifts',
-                            'bg' => '#E9E8E1',
-                            'btn' => 'Shop Now',
-                            'link' => route('products.all')
-                        ],
-                        [
-                            'image' => 'front/images/shop/misc/8.webp',
-                            'title' => 'Garden Care',
-                            'bg' => '#DCE0CE',
-                            'btn' => 'Order Now',
-                            'link' => route('products.all')
-                        ],
-                        [
-                            'image' => 'front/images/shop/misc/9.webp',
-                            'title' => 'Garden Accessories',
-                            'bg' => '#F3EDDE',
-                            'btn' => 'Shop Now',
-                            'link' => route('products.all')
-                        ],
-                    ];
+                            [
+                                'image' => 'front/images/shop/misc/5.webp',
+                                'title' => 'Oud Collection',
+                                'bg' => '#f5f1ec',
+                                'btn' => 'Explore Now',
+                                'link' => route('products.all')
+                            ],
+                            [
+                                'image' => 'front/images/shop/misc/6.webp',
+                                'title' => 'Floral Fragrances',
+                                'bg' => '#f5f1ec',
+                                'btn' => 'Shop Now',
+                                'link' => route('products.all')
+                            ],
+                            [
+                                'image' => 'front/images/shop/misc/8.webp',
+                                'title' => 'Gift Sets',
+                                'bg' => '#f5f1ec',
+                                'btn' => 'Order Now',
+                                'link' => route('products.all')
+                            ],
+                            [
+                                'image' => 'front/images/shop/misc/9.webp',
+                                'title' => 'Unisex Perfumes',
+                                'bg' => '#f5f1ec',
+                                'btn' => 'Discover',
+                                'link' => route('products.all')
+                            ],
+                        ]
                 @endphp
 
                 @foreach ($promos as $promo)
@@ -553,13 +591,38 @@
 
     <!-- Best Selling  -->
     <div id="section_best_selling">
+        @php $best_selling_products = get_best_selling_products(20); @endphp
+
+        @if (get_setting('best_selling') == 1 && count($best_selling_products) > 0)
+            <section>
+                <div class="container">
+                    <div class="row g-4 mb-4">
+                        <div class="col-lg-12">
+                            <div class="owl-custom-nav menu-" data-target="#best-seller-carousel">
+                                <div class="d-flex justify-content-between">
+                                    <h3 class="text-uppercase mb-4">{{ translate('Best Sellers') }}</h3>
+                                    <div class="arrow-simple">
+                                        <a class="btn-prev"></a>
+                                        <a class="btn-next"></a>
+                                    </div>
+                                </div>
+
+                                <div id="best-seller-carousel" class="owl-carousel owl-4-cols">
+                                    @foreach ($best_selling_products as $key => $product)
+                                        <div class="item">
+                                            @include('frontend.'.get_setting('homepage_select').'.partials.product_box_3',['product' => $product])
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
 
     </div>
 
-    <!-- New Products -->
-    <div id="section_newest">
-
-    </div>
 
     @php
         $testimonials = [
@@ -607,28 +670,29 @@
             <div class="container relative z-2">
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
-                        <div class="owl-carousel owl-theme wow fadeInUp" id="testimonial-carousel">
-                            @foreach ($testimonials as $testimonial)
-                                <div class="item">
-                                    <div class="bg-light relative p-4">
-                                        <i class="icofont-quote-right abs top-0 end-0 fs-32 m-4 id-color-2"></i>
-                                        <div class="relative">
-                                            <img class="relative z-2 w-60px circle" alt="{{ $testimonial['name'] }}"
-                                                 src="{{ static_asset($testimonial['image']) }}">
-                                        </div>
-                                        <div class="mt-3 fw-600">{{ $testimonial['name'] }}
-                                            <span>{{ $testimonial['role'] }}</span></div>
-                                        <div class="de-rating-ext mb-3">
-                                        <span class="d-stars">
-                                            @for ($i = 0; $i < 5; $i++)
-                                                <i class="fa-solid fa-star{{ $i < $testimonial['rating'] ? '' : '-o' }}"></i>
-                                            @endfor
-                                        </span>
-                                        </div>
-                                        <p>"{{ $testimonial['comment'] }}"</p>
-                                    </div>
-                                </div>
-                            @endforeach
+                        <div class="owl-carousel owl-theme wow fadeInUp" id="testimonial-carousel"
+                             style="height: 355px !important;">
+                            {{--  @foreach ($testimonials as $testimonial)
+                                  <div class="item">
+                                      <div class="bg-light relative p-4">
+                                          <i class="icofont-quote-right abs top-0 end-0 fs-32 m-4 id-color-2"></i>
+                                          <div class="relative">
+                                              <img class="relative z-2 w-60px circle" alt="{{ $testimonial['name'] }}"
+                                                   src="{{ static_asset($testimonial['image']) }}">
+                                          </div>
+                                          <div class="mt-3 fw-600">{{ $testimonial['name'] }}
+                                              <span>{{ $testimonial['role'] }}</span></div>
+                                          <div class="de-rating-ext mb-3">
+                                          <span class="d-stars">
+                                              @for ($i = 0; $i < 5; $i++)
+                                                  <i class="fa-solid fa-star{{ $i < $testimonial['rating'] ? '' : '-o' }}"></i>
+                                              @endfor
+                                          </span>
+                                          </div>
+                                          <p>"{{ $testimonial['comment'] }}"</p>
+                                      </div>
+                                  </div>
+                              @endforeach--}}
                         </div>
                     </div>
                 </div>
@@ -637,12 +701,46 @@
     @endif
 
 
+    <!-- New Products -->
+    <div id="section_newest">
+        @if (count($newest_products) > 0)
+            <section>
+                <div class="container">
+                    <div class="row g-4 mb-4">
+                        <div class="col-lg-12">
+                            <div class="owl-custom-nav menu-" data-target="#new-arrivals-carousel">
+                                <div class="d-flex justify-content-between">
+                                    <h3 class="text-uppercase mb-4">{{ translate('New Arrivals') }}</h3>
+                                    <div class="arrow-simple">
+                                        <a class="btn-prev"></a>
+                                        <a class="btn-next"></a>
+                                    </div>
+                                </div>
+
+                                <div id="new-arrivals-carousel" class="owl-carousel owl-4-cols">
+                                    @foreach ($newest_products as $key => $new_product)
+                                        <div class="item">
+                                            @include('frontend.'.get_setting('homepage_select').'.partials.product_box_1',['product' => $new_product])
+                                        </div>
+                                    @endforeach
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
+
+    </div>
+    <!-- Latest Blog -->
+
     @php
         $hero_banner = [
-    'title' => 'Discover Amazing <span class="id-color-2">variety of plants</span>',
-    'subtitle' => 'Best Quality Plants',
-    'description' => 'From vibrant flowering plants to lush tropical greens, we offer an incredible variety to turn your space into a living paradise.',
-    'btn_text' => 'Shop Now',
+   'title' => 'Discover an <span class="id-color-2" style="color: #f4f0ed !important;">Unforgettable Fragrance Experience</span>',
+'subtitle' => 'Finest Perfume Collection',
+'description' => 'From rich oriental scents to soft floral notes, explore a world of premium perfumes designed to express your identity and elevate every moment.',
+  'btn_text' => 'Shop Now',
     'btn_link' => 'shop-shop-all.html',
     'background_image' => 'front/images/shop/slider/bg.webp',
     'hero_image' => 'front/images/shop/misc/7.webp',
@@ -652,26 +750,25 @@
     <section class="jarallax rtl">
         <img src="{{ asset($hero_banner['background_image']) }}" class="jarallax-img" alt="">
         <div class="container">
-            <div class="row g-4 align-items-center justify-content-between">
+            <div class="row g-4 align-items-center justify-content-end">
 
                 <div class="col-lg-5">
                     <div class="sw-text-wrapper">
-                        <div class="subtitle">{{ $hero_banner['subtitle'] }}</div>
-                        <h2 class="mb-2 text-uppercase">{!! $hero_banner['title'] !!}</h2>
-                        <p>{{ $hero_banner['description'] }}</p>
-                        <a class="btn-main mb10 mb-3" href="{{ $hero_banner['btn_link'] }}">{{ $hero_banner['btn_text'] }}</a>
+                        <div class="subtitle" style="color: #f4f0ed !important;">{{ $hero_banner['subtitle'] }}</div>
+                        <h2 class="mb-2 text-uppercase" style="color: #f4f0ed !important;">{!! $hero_banner['title'] !!}</h2>
+                        <p style="color: #f4f0ed !important;">{{ $hero_banner['description'] }}</p>
+                        <a class="btn-main mb10 mb-3"
+                           href="{{ $hero_banner['btn_link'] }}">{{ $hero_banner['btn_text'] }}</a>
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="relative">
-                        <img src="{{ asset($hero_banner['hero_image']) }}" class="w-100" alt="">
-                    </div>
-                </div>
 
             </div>
         </div>
     </section>
+
+
+
     @if ($blogs->count() > 0)
         <section class="rtl">
             <div class="container">
@@ -685,8 +782,10 @@
                             <div class="bg-light overflow-hidden">
                                 <div class="row g-2">
                                     <div class="col-sm-6">
-                                        <div class="auto-height relative" style="background-image: url('{{ uploaded_asset($blog->banner) }}'); background-size: cover;">
-                                            <div class="abs start-0 top-0 bg-color-2 text-white p-3 pb-2 m-3 text-center fw-600 rounded-5px">
+                                        <div class="auto-height relative"
+                                             style="background-image: url('{{ uploaded_asset($blog->banner) }}'); background-size: cover;">
+                                            <div
+                                                class="abs start-0 top-0 bg-color-2 text-white p-3 pb-2 m-3 text-center fw-600 rounded-5px">
                                                 <div class="fs-36 mb-0">{{ $blog->created_at->format('d') }}</div>
                                                 <span>{{ $blog->created_at->format('M') }}</span>
                                             </div>
@@ -784,11 +883,11 @@
                                                 <g id="Subtraction_167" data-name="Subtraction 167"
                                                    transform="translate(-12177 -8458)" fill="none">
                                                     <path
-                                                            d="M12335,13770h-56a8.009,8.009,0,0,1-8-8v-8a8,8,0,0,0,0-16v-8a8.009,8.009,0,0,1,8-8h56a8.009,8.009,0,0,1,8,8v8a8,8,0,0,0,0,16v8A8.009,8.009,0,0,1,12335,13770Z"
-                                                            stroke="none"/>
+                                                        d="M12335,13770h-56a8.009,8.009,0,0,1-8-8v-8a8,8,0,0,0,0-16v-8a8.009,8.009,0,0,1,8-8h56a8.009,8.009,0,0,1,8,8v8a8,8,0,0,0,0,16v8A8.009,8.009,0,0,1,12335,13770Z"
+                                                        stroke="none"/>
                                                     <path
-                                                            d="M 12335.0009765625 13768.0009765625 C 12338.3095703125 13768.0009765625 12341.0009765625 13765.30859375 12341.0009765625 13762 L 12341.0009765625 13755.798828125 C 12336.4423828125 13754.8701171875 12333.0009765625 13750.8291015625 12333.0009765625 13746 C 12333.0009765625 13741.171875 12336.4423828125 13737.130859375 12341.0009765625 13736.201171875 L 12341.0009765625 13729.9990234375 C 12341.0009765625 13726.6904296875 12338.3095703125 13723.9990234375 12335.0009765625 13723.9990234375 L 12278.9990234375 13723.9990234375 C 12275.6904296875 13723.9990234375 12272.9990234375 13726.6904296875 12272.9990234375 13729.9990234375 L 12272.9990234375 13736.201171875 C 12277.5576171875 13737.1298828125 12280.9990234375 13741.1708984375 12280.9990234375 13746 C 12280.9990234375 13750.828125 12277.5576171875 13754.869140625 12272.9990234375 13755.798828125 L 12272.9990234375 13762 C 12272.9990234375 13765.30859375 12275.6904296875 13768.0009765625 12278.9990234375 13768.0009765625 L 12335.0009765625 13768.0009765625 M 12335.0009765625 13770.0009765625 L 12278.9990234375 13770.0009765625 C 12274.587890625 13770.0009765625 12270.9990234375 13766.412109375 12270.9990234375 13762 L 12270.9990234375 13754 C 12275.4111328125 13753.9990234375 12278.9990234375 13750.4111328125 12278.9990234375 13746 C 12278.9990234375 13741.5888671875 12275.41015625 13738 12270.9990234375 13738 L 12270.9990234375 13729.9990234375 C 12270.9990234375 13725.587890625 12274.587890625 13721.9990234375 12278.9990234375 13721.9990234375 L 12335.0009765625 13721.9990234375 C 12339.412109375 13721.9990234375 12343.0009765625 13725.587890625 12343.0009765625 13729.9990234375 L 12343.0009765625 13738 C 12338.5888671875 13738.0009765625 12335.0009765625 13741.5888671875 12335.0009765625 13746 C 12335.0009765625 13750.4111328125 12338.58984375 13754 12343.0009765625 13754 L 12343.0009765625 13762 C 12343.0009765625 13766.412109375 12339.412109375 13770.0009765625 12335.0009765625 13770.0009765625 Z"
-                                                            stroke="none" fill="#fff"/>
+                                                        d="M 12335.0009765625 13768.0009765625 C 12338.3095703125 13768.0009765625 12341.0009765625 13765.30859375 12341.0009765625 13762 L 12341.0009765625 13755.798828125 C 12336.4423828125 13754.8701171875 12333.0009765625 13750.8291015625 12333.0009765625 13746 C 12333.0009765625 13741.171875 12336.4423828125 13737.130859375 12341.0009765625 13736.201171875 L 12341.0009765625 13729.9990234375 C 12341.0009765625 13726.6904296875 12338.3095703125 13723.9990234375 12335.0009765625 13723.9990234375 L 12278.9990234375 13723.9990234375 C 12275.6904296875 13723.9990234375 12272.9990234375 13726.6904296875 12272.9990234375 13729.9990234375 L 12272.9990234375 13736.201171875 C 12277.5576171875 13737.1298828125 12280.9990234375 13741.1708984375 12280.9990234375 13746 C 12280.9990234375 13750.828125 12277.5576171875 13754.869140625 12272.9990234375 13755.798828125 L 12272.9990234375 13762 C 12272.9990234375 13765.30859375 12275.6904296875 13768.0009765625 12278.9990234375 13768.0009765625 L 12335.0009765625 13768.0009765625 M 12335.0009765625 13770.0009765625 L 12278.9990234375 13770.0009765625 C 12274.587890625 13770.0009765625 12270.9990234375 13766.412109375 12270.9990234375 13762 L 12270.9990234375 13754 C 12275.4111328125 13753.9990234375 12278.9990234375 13750.4111328125 12278.9990234375 13746 C 12278.9990234375 13741.5888671875 12275.41015625 13738 12270.9990234375 13738 L 12270.9990234375 13729.9990234375 C 12270.9990234375 13725.587890625 12274.587890625 13721.9990234375 12278.9990234375 13721.9990234375 L 12335.0009765625 13721.9990234375 C 12339.412109375 13721.9990234375 12343.0009765625 13725.587890625 12343.0009765625 13729.9990234375 L 12343.0009765625 13738 C 12338.5888671875 13738.0009765625 12335.0009765625 13741.5888671875 12335.0009765625 13746 C 12335.0009765625 13750.4111328125 12338.58984375 13754 12343.0009765625 13754 L 12343.0009765625 13762 C 12343.0009765625 13766.412109375 12339.412109375 13770.0009765625 12335.0009765625 13770.0009765625 Z"
+                                                        stroke="none" fill="#fff"/>
                                                 </g>
                                             </g>
                                         </g>
@@ -797,11 +896,11 @@
                                             <g id="Subtraction_167-2" data-name="Subtraction 167"
                                                transform="translate(-12177 -8458)" fill="none">
                                                 <path
-                                                        d="M12335,13770h-56a8.009,8.009,0,0,1-8-8v-8a8,8,0,0,0,0-16v-8a8.009,8.009,0,0,1,8-8h56a8.009,8.009,0,0,1,8,8v8a8,8,0,0,0,0,16v8A8.009,8.009,0,0,1,12335,13770Z"
-                                                        stroke="none"/>
+                                                    d="M12335,13770h-56a8.009,8.009,0,0,1-8-8v-8a8,8,0,0,0,0-16v-8a8.009,8.009,0,0,1,8-8h56a8.009,8.009,0,0,1,8,8v8a8,8,0,0,0,0,16v8A8.009,8.009,0,0,1,12335,13770Z"
+                                                    stroke="none"/>
                                                 <path
-                                                        d="M 12335.0009765625 13768.0009765625 C 12338.3095703125 13768.0009765625 12341.0009765625 13765.30859375 12341.0009765625 13762 L 12341.0009765625 13755.798828125 C 12336.4423828125 13754.8701171875 12333.0009765625 13750.8291015625 12333.0009765625 13746 C 12333.0009765625 13741.171875 12336.4423828125 13737.130859375 12341.0009765625 13736.201171875 L 12341.0009765625 13729.9990234375 C 12341.0009765625 13726.6904296875 12338.3095703125 13723.9990234375 12335.0009765625 13723.9990234375 L 12278.9990234375 13723.9990234375 C 12275.6904296875 13723.9990234375 12272.9990234375 13726.6904296875 12272.9990234375 13729.9990234375 L 12272.9990234375 13736.201171875 C 12277.5576171875 13737.1298828125 12280.9990234375 13741.1708984375 12280.9990234375 13746 C 12280.9990234375 13750.828125 12277.5576171875 13754.869140625 12272.9990234375 13755.798828125 L 12272.9990234375 13762 C 12272.9990234375 13765.30859375 12275.6904296875 13768.0009765625 12278.9990234375 13768.0009765625 L 12335.0009765625 13768.0009765625 M 12335.0009765625 13770.0009765625 L 12278.9990234375 13770.0009765625 C 12274.587890625 13770.0009765625 12270.9990234375 13766.412109375 12270.9990234375 13762 L 12270.9990234375 13754 C 12275.4111328125 13753.9990234375 12278.9990234375 13750.4111328125 12278.9990234375 13746 C 12278.9990234375 13741.5888671875 12275.41015625 13738 12270.9990234375 13738 L 12270.9990234375 13729.9990234375 C 12270.9990234375 13725.587890625 12274.587890625 13721.9990234375 12278.9990234375 13721.9990234375 L 12335.0009765625 13721.9990234375 C 12339.412109375 13721.9990234375 12343.0009765625 13725.587890625 12343.0009765625 13729.9990234375 L 12343.0009765625 13738 C 12338.5888671875 13738.0009765625 12335.0009765625 13741.5888671875 12335.0009765625 13746 C 12335.0009765625 13750.4111328125 12338.58984375 13754 12343.0009765625 13754 L 12343.0009765625 13762 C 12343.0009765625 13766.412109375 12339.412109375 13770.0009765625 12335.0009765625 13770.0009765625 Z"
-                                                        stroke="none" fill="#fff"/>
+                                                    d="M 12335.0009765625 13768.0009765625 C 12338.3095703125 13768.0009765625 12341.0009765625 13765.30859375 12341.0009765625 13762 L 12341.0009765625 13755.798828125 C 12336.4423828125 13754.8701171875 12333.0009765625 13750.8291015625 12333.0009765625 13746 C 12333.0009765625 13741.171875 12336.4423828125 13737.130859375 12341.0009765625 13736.201171875 L 12341.0009765625 13729.9990234375 C 12341.0009765625 13726.6904296875 12338.3095703125 13723.9990234375 12335.0009765625 13723.9990234375 L 12278.9990234375 13723.9990234375 C 12275.6904296875 13723.9990234375 12272.9990234375 13726.6904296875 12272.9990234375 13729.9990234375 L 12272.9990234375 13736.201171875 C 12277.5576171875 13737.1298828125 12280.9990234375 13741.1708984375 12280.9990234375 13746 C 12280.9990234375 13750.828125 12277.5576171875 13754.869140625 12272.9990234375 13755.798828125 L 12272.9990234375 13762 C 12272.9990234375 13765.30859375 12275.6904296875 13768.0009765625 12278.9990234375 13768.0009765625 L 12335.0009765625 13768.0009765625 M 12335.0009765625 13770.0009765625 L 12278.9990234375 13770.0009765625 C 12274.587890625 13770.0009765625 12270.9990234375 13766.412109375 12270.9990234375 13762 L 12270.9990234375 13754 C 12275.4111328125 13753.9990234375 12278.9990234375 13750.4111328125 12278.9990234375 13746 C 12278.9990234375 13741.5888671875 12275.41015625 13738 12270.9990234375 13738 L 12270.9990234375 13729.9990234375 C 12270.9990234375 13725.587890625 12274.587890625 13721.9990234375 12278.9990234375 13721.9990234375 L 12335.0009765625 13721.9990234375 C 12339.412109375 13721.9990234375 12343.0009765625 13725.587890625 12343.0009765625 13729.9990234375 L 12343.0009765625 13738 C 12338.5888671875 13738.0009765625 12335.0009765625 13741.5888671875 12335.0009765625 13746 C 12335.0009765625 13750.4111328125 12338.58984375 13754 12343.0009765625 13754 L 12343.0009765625 13762 C 12343.0009765625 13766.412109375 12339.412109375 13770.0009765625 12335.0009765625 13770.0009765625 Z"
+                                                    stroke="none" fill="#fff"/>
                                             </g>
                                             <g id="Group_24325" data-name="Group 24325">
                                                 <rect id="Rectangle_18578" data-name="Rectangle 18578" width="8"
@@ -834,9 +933,58 @@
     @endif
 
     <!-- Category wise Products -->
-    <div id="section_home_categories" class="mb-2 mb-md-3 mt-2 mt-md-3">
+    @if (get_setting('home_categories') != null)
+        <div id="section_home_categories" class="mb-2 mb-md-3 mt-2 mt-md-3">
+            @php
+                $home_categories = json_decode(get_setting('home_categories'));
+                $categories = get_category($home_categories);
+            @endphp
+            @foreach ($categories as $category_key => $category)
+                @php
+                    $category_name = $category->getTranslation('name');
+                @endphp
+                <section class="@if ($category_key != 0) mt-4 @endif" style="">
+                    <div class="container">
+                        <div class="row gutters-16">
+                            <!-- Home category banner & name -->
+                            <div class="col-xl-3 col-lg-4 col-md-5">
+                                <div class="h-200px h-sm-250px h-md-340px">
+                                    <a href="{{ route('products.category', $category->slug) }}"
+                                       class="d-block h-100 w-100 w-xl-auto hov-scale-img overflow-hidden home-category-banner">
+                                <span class="position-absolute h-100 w-100 overflow-hidden">
+                                    <img
+                                        src="{{ isset($category->coverImage->file_name) ? my_asset($category->coverImage->file_name) : static_asset('assets/img/placeholder.jpg') }}"
+                                        alt="{{ $category_name }}"
+                                        class="img-fit h-100 has-transition"
+                                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                </span>
+                                        <span class="home-category-name fs-15 fw-600 text-white text-center">
+                                    <span class="">{{ $category_name }}</span>
+                                </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Category Products -->
+                            <div class="col-xl-9 col-lg-8 col-md-7">
+                                <div class="aiz-carousel arrow-x-0 border-right arrow-inactive-none" data-items="5"
+                                     data-xxl-items="5" data-xl-items="4.5" data-lg-items="3" data-md-items="2"
+                                     data-sm-items="2"
+                                     data-xs-items="2" data-arrows='true' data-infinite='false'>
+                                    @foreach (get_cached_products($category->id) as $product_key => $product)
+                                        <div
+                                            class="carousel-box px-3 position-relative has-transition border-right border-top border-bottom @if ($product_key == 0) border-left @endif hov-animate-outline">
+                                            @include('frontend.'.get_setting('homepage_select').'.partials.product_box_1', ['product' => $product])
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            @endforeach
 
-    </div>
+        </div>
+    @endif
 
     @if (addon_is_activated('preorder'))
         <!-- Newest Preorder Products -->
@@ -859,7 +1007,7 @@
                         </h3>
                         <!-- Links -->
                         <div class="d-flex">
-                            <a class="text-blue fs-10 fs-md-12 fw-700 hov-text-primary animate-underline-primary"
+                            <a class="text-dark fs-10 fs-md-12 fw-700 hov-text-primary animate-underline-primary"
                                href="{{ route('customer.products') }}">{{ translate('View All Products') }}</a>
                         </div>
                     </div>
@@ -887,7 +1035,7 @@
                         <div class="row no-gutters border-top border-left">
                             @foreach ($classified_products as $key => $classified_product)
                                 <div
-                                        class="col-xl-4 col-md-6 border-right border-bottom has-transition hov-shadow-out z-1">
+                                    class="col-xl-4 col-md-6 border-right border-bottom has-transition hov-shadow-out z-1">
                                     <div class="aiz-card-box p-2 has-transition bg-white">
                                         <div class="row hov-scale-img">
                                             <div class="col-4 col-md-5 mb-3 mb-md-0">
@@ -902,24 +1050,24 @@
                                             </div>
                                             <div class="col">
                                                 <h3
-                                                        class="fw-400 fs-14 text-dark text-truncate-2 lh-1-4 mb-3 h-35px d-none d-sm-block">
+                                                    class="fw-400 fs-14 text-dark text-truncate-2 lh-1-4 mb-3 h-35px d-none d-sm-block">
                                                     <a href="{{ route('customer.product', $classified_product->slug) }}"
                                                        class="d-block text-reset hov-text-primary">{{ $classified_product->getTranslation('name') }}</a>
                                                 </h3>
                                                 <div class="fs-14 mb-3">
                                                     <span
-                                                            class="text-secondary">{{ $classified_product->user ? $classified_product->user->name : '' }}</span><br>
+                                                        class="text-secondary">{{ $classified_product->user ? $classified_product->user->name : '' }}</span><br>
                                                     <span
-                                                            class="fw-700 text-primary">{{ single_price($classified_product->unit_price) }}</span>
+                                                        class="fw-700 text-primary">{{ single_price($classified_product->unit_price) }}</span>
                                                 </div>
                                                 @if ($classified_product->conditon == 'new')
                                                     <span
-                                                            class="badge badge-inline badge-soft-info fs-13 fw-700 p-3 text-info"
-                                                            style="border-radius: 20px;">{{ translate('New') }}</span>
+                                                        class="badge badge-inline badge-soft-info fs-13 fw-700 p-3 text-info"
+                                                        style="border-radius: 20px;">{{ translate('New') }}</span>
                                                 @elseif($classified_product->conditon == 'used')
                                                     <span
-                                                            class="badge badge-inline badge-soft-danger fs-13 fw-700 p-3 text-danger"
-                                                            style="border-radius: 20px;">{{ translate('Used') }}</span>
+                                                        class="badge badge-inline badge-soft-danger fs-13 fw-700 p-3 text-danger"
+                                                        style="border-radius: 20px;">{{ translate('Used') }}</span>
                                                 @endif
                                             </div>
                                         </div>
@@ -949,7 +1097,7 @@
                         </h3>
                         <!-- Links -->
                         <div class="d-flex">
-                            <a class="text-blue fs-10 fs-md-12 fw-700 hov-text-primary animate-underline-primary"
+                            <a class="text-dark fs-10 fs-md-12 fw-700 hov-text-primary animate-underline-primary"
                                href="{{ route('sellers') }}">{{ translate('View All Sellers') }}</a>
                         </div>
                     </div>
@@ -960,7 +1108,7 @@
                         @foreach ($best_selers as $key => $seller)
                             @if ($seller->user != null)
                                 <div
-                                        class="carousel-box h-100 position-relative text-center border-right border-top border-bottom @if ($key == 0) border-left @endif has-transition hov-animate-outline">
+                                    class="carousel-box h-100 position-relative text-center border-right border-top border-bottom @if ($key == 0) border-left @endif has-transition hov-animate-outline">
                                     <div class="position-relative px-3" style="padding-top: 2rem; padding-bottom:2rem;">
                                         <!-- Shop logo & Verification Status -->
                                         <div class="position-relative mx-auto size-100px size-md-120px">
@@ -1048,26 +1196,28 @@
                     <h3 class="fs-16 fs-md-20 fw-700 mb-2 mb-sm-0">{{ translate('Top Brands') }}</h3>
                     <!-- Links -->
                     <div class="d-flex">
-                        <a class="text-blue fs-10 fs-md-12 fw-700 hov-text-primary animate-underline-primary"
+                        <a class="text-dark fs-10 fs-md-12 fw-700 hov-text-primary animate-underline-primary"
                            href="{{ route('brands.all') }}">{{ translate('View All Brands') }}</a>
                     </div>
                 </div>
                 <!-- Brands Section -->
-                <div class="bg-white px-3">
+                <div class="px-3">
                     <div
-                            class="row row-cols-xxl-6 row-cols-xl-6 row-cols-lg-4 row-cols-md-4 row-cols-3 gutters-16 border-top border-left">
+                        class="row row-cols-xxl-6 row-cols-xl-6 row-cols-lg-4 row-cols-md-4 row-cols-3 gutters-16 border-top border-left justify-content-center"
+                        style="background: #e2e0d7">
                         @php
                             $top_brands = json_decode(get_setting('top_brands'));
                             $brands = get_brands($top_brands);
                         @endphp
                         @foreach ($brands as $brand)
                             <div
-                                    class="col text-center border-right border-bottom hov-scale-img has-transition hov-shadow-out z-1">
+                                class="col text-center border-right border-bottom hov-scale-img has-transition hov-shadow-out z-1">
                                 <a href="{{ route('products.brand', $brand->slug) }}" class="d-block p-sm-3">
-                                    <img src="{{ $brand->logo != null ? uploaded_asset($brand->logo) : static_asset('assets/img/placeholder.jpg') }}"
-                                         class="lazyload h-100 h-md-100px mx-auto has-transition p-2 p-sm-4 mw-100"
-                                         alt="{{ $brand->getTranslation('name') }}"
-                                         onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                    <img
+                                        src="{{ $brand->logo != null ? uploaded_asset($brand->logo) : static_asset('assets/img/placeholder.jpg') }}"
+                                        class="lazyload h-100 h-md-100px mx-auto has-transition p-2 p-sm-4 mw-100"
+                                        alt="{{ $brand->getTranslation('name') }}"
+                                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
                                     <p class="text-center text-dark fs-12 fs-md-14 fw-700 mt-2">
                                         {{ $brand->getTranslation('name') }}
                                     </p>

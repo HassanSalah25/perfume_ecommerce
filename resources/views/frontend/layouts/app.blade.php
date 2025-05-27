@@ -66,12 +66,12 @@
             <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
             <!-- CSS Files -->
-            <link rel="stylesheet" href="{{ static_asset('assets/css/vendors.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/vendors.css') }}">
             @if ($rtl == 1)
-                <link rel="stylesheet" href="{{ static_asset('assets/css/bootstrap-rtl.min.css') }}">
+                <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-rtl.min.css') }}">
             @endif
-            <link rel="stylesheet" href="{{ static_asset('assets/css/aiz-core.css?v=') }}{{ rand(1000, 9999) }}">
-            <link rel="stylesheet" href="{{ static_asset('assets/css/custom-style.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/aiz-core.css?v=') }}{{ rand(1000, 9999) }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/custom-style.css') }}">
 
 
             <script>
@@ -462,7 +462,8 @@
 
         <!-- website popup -->
         @php
-            $dynamic_popups = App\Models\DynamicPopup::where('status', 1)->orderBy('id', 'asc')->get();
+//            $dynamic_popups = App\Models\DynamicPopup::where('status', 1)->orderBy('id', 'asc')->get();
+            $dynamic_popups = [];
         @endphp
         @foreach ($dynamic_popups as $key => $dynamic_popup)
             @if($dynamic_popup->id == 1)
@@ -545,8 +546,8 @@
         @yield('modal')
 
         <!-- SCRIPTS -->
-        <script src="{{ static_asset('assets/js/vendors.js') }}"></script>
-        <script src="{{ static_asset('assets/js/aiz-core.js?v=') }}{{ rand(1000, 9999) }}"></script>
+{{--        <script src="{{ asset('assets/js/vendors.js') }}"></script>--}}
+        <script src="{{ asset('assets/js/aiz-core.js?v=') }}{{ rand(1000, 9999) }}"></script>
 
 
 
@@ -585,12 +586,12 @@
             console.log('dsdsd')
             @if (Route::currentRouteName() == 'home' || Route::currentRouteName() == '/')
 
-            $.post('{{ route('home.section.featured') }}', {
+            /*$.post('{{ route('home.section.featured') }}', {
                 _token: '{{ csrf_token() }}'
             }, function(data) {
                 $('#section_featured').html(data);
                 AIZ.plugins.slickCarousel();
-            });
+            });*/
 
             $.post('{{ route('home.section.todays_deal') }}', {
                 _token: '{{ csrf_token() }}'
@@ -599,20 +600,20 @@
                 AIZ.plugins.slickCarousel();
             });
 
-            $.post('{{ route('home.section.best_selling') }}', {
-                _token: '{{ csrf_token() }}'
-            }, function(data) {
-                $('#section_best_selling').html(data);
-                AIZ.plugins.slickCarousel();
-            });
+            {{--$.post('{{ route('home.section.best_selling') }}', {--}}
+            {{--    _token: '{{ csrf_token() }}'--}}
+            {{--}, function(data) {--}}
+            {{--    $('#section_best_selling').html(data);--}}
+            {{--    AIZ.plugins.slickCarousel();--}}
+            {{--});--}}
 
-            $.post('{{ route('home.section.newest_products') }}', {
-                _token: '{{ csrf_token() }}'
-            }, function(data) {
-                console.log('tesstttttttttttttts')
-                $('#section_newest').html(data);
-                AIZ.plugins.slickCarousel();
-            });
+            {{--$.post('{{ route('home.section.newest_products') }}', {--}}
+            {{--    _token: '{{ csrf_token() }}'--}}
+            {{--}, function(data) {--}}
+            {{--    console.log('tesstttttttttttttts')--}}
+            {{--    $('#section_newest').html(data);--}}
+            {{--    AIZ.plugins.slickCarousel();--}}
+            {{--});--}}
 
             $.post('{{ route('home.section.auction_products') }}', {
                 _token: '{{ csrf_token() }}'
@@ -628,12 +629,12 @@
                 AIZ.plugins.slickCarousel();
             });
 
-            $.post('{{ route('home.section.home_categories') }}', {
-                _token: '{{ csrf_token() }}'
-            }, function(data) {
-                $('#section_home_categories').html(data);
-                AIZ.plugins.slickCarousel();
-            });
+            {{--$.post('{{ route('home.section.home_categories') }}', {--}}
+            {{--    _token: '{{ csrf_token() }}'--}}
+            {{--}, function(data) {--}}
+            {{--    $('#section_home_categories').html(data);--}}
+            {{--    AIZ.plugins.slickCarousel();--}}
+            {{--});--}}
 
             @endif
 
@@ -994,7 +995,7 @@
 
                 var iti = intlTelInput(input, {
                     separateDialCode: true,
-                    utilsScript: "{{ static_asset('assets/js/intlTelutils.js') }}?1590403638580",
+                    utilsScript: "{{ asset('assets/js/intlTelutils.js') }}?1590403638580",
                     onlyCountries: @php echo get_active_countries()->pluck('code') @endphp,
                     customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
                         if (selectedCountryData.iso2 == 'bd') {

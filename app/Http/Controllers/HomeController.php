@@ -49,9 +49,12 @@ class HomeController extends Controller
         $featured_categories = Cache::rememberForever('featured_categories', function () {
             return Category::with('bannerImage')->where('featured', 1)->get();
         });
+        $newest_products = Cache::remember('newest_products', 3600, function () {
+            return filter_products(Product::latest())->limit(12)->get();
+        });
         //  latest 2 blogs
-        $blogs = Blog::where('status', 1)->orderBy('created_at', 'desc')->take(2)->get();
-        return view('frontend.' . get_setting('homepage_select') . '.index', compact('featured_categories', 'lang','blogs'));
+        $blogs = Blog::where('status', 1)->orderBy('created_at', 'desc')->take(6)->get();
+        return view('frontend.' . get_setting('homepage_select') . '.index', compact('featured_categories','newest_products', 'lang','blogs'));
     }
 
     public function load_todays_deal_section()
@@ -458,7 +461,7 @@ class HomeController extends Controller
                             });
                         }
                     });
-                
+
                     $is_available = $availability;
                 } else {
                     $is_available = null;
